@@ -1,0 +1,541 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1">
+
+        <link rel="icon" href="_scroll_external/attachments/3de1052076b3/devdocs">
+
+        <!-- Primary Meta Tags -->
+        <meta name="exp-export-timestamp" content="2025-11-11T15:47:25.502+0530">
+        <meta name="exp-page-id" content="392365526">
+        <meta name="exp-page-title" content="Setup">
+        <meta name="exp-page-version" content="1">
+        <meta name="exp-page-scroll-page-id" content="">
+        <meta name="exp-page-created" content="2025-11-10T01:34:00.883+0530">
+        <meta name="exp-page-last-modified" content="2025-11-10T01:34:00.883+0530">
+        <meta name="exp-page-labels" content="">
+        <meta name="exp-page-context-keys" content="">
+        <meta name="exp-space-key" content="DEVDOCS">
+        <meta name="exp-space-title" content="Developer Documentation">
+
+        <!-- Additional Meta Tags -->
+        <meta name="exp-document-id" content="">
+        <meta name="exp-document-title" content="Corporater Developer Documentation">
+        <meta name="exp-version-status" content="">
+        <meta name="exp-version-id" content="">
+        <meta name="exp-version-name" content="">
+        <meta name="exp-version-description" content="">
+        <meta name="exp-version-date" content="">
+        <meta name="exp-variant-id" content="">
+        <meta name="exp-variant-name" content="">
+        <meta name="exp-variant-description" content="">
+        <meta name="exp-language-code" content="">
+        <meta name="exp-language-name" content="">
+
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/image-dimensions.css">
+
+
+            
+            
+<script src="js/search.js"></script>
+            <script id="search-worker" type="javascript/worker">
+    onmessage = function(event) {
+        // dispatch events to handling functions
+        var message = event.data;
+
+        if ((message.type === 'setup') && message.baseUrl) {
+            setup(message.baseUrl);
+        }
+
+        if (message.type === 'search-request') {
+            search(message.query);
+        }
+    }
+
+    var searchIndex;
+
+    function setup(baseUrl) {
+        importScripts(
+            baseUrl + 'js/lunr.js',
+            baseUrl + 'js/lunr-index.js',
+            baseUrl + 'js/lunr-data.js'
+        );
+        try {
+            // load lunr-extras if it exists, which contains language-specific files for languages other than english
+            importScripts(baseUrl + 'js/lunr-extras.js');
+        } catch (e) {}
+        searchIndex = lunr.Index.load(lunrIndex);
+    }
+
+    function search(query) {
+        var searchHits = searchIndex.search(query);
+        var results = searchHits.map(function (result) {
+            return lunrData.filter(function (d) {
+                return d.id === result.ref;
+            })[0]
+        });
+        postMessage({ type: 'search-results', results: results, query: query });
+    }
+</script>
+        <title>Setup</title>
+
+    <meta name="generator" content="Scroll HTML Exporter / K15t GmbH"><meta name="exp-content-hash" content="47f0354842427206b4aacdc71f3b60d058186953108fb8d5056837a609c211fd"></head>
+
+    <body id="Setup-top" data-pageid="392365526" data-confluence-editor-version="v1" data-confluence-deployment-type="CLOUD">
+
+        <div class="exp-grid-container">
+
+            <header class="exp-header"></header>
+
+            <div class="exp-logo">
+                <a href="Corporater-Developer-Documentation.392528899.html">
+                    <span class="exp-logo-image" style="background-image: url(_scroll_external/attachments/3de1052076b3/devdocs)" alt="Developer Documentation" title="Developer Documentation"></span>
+                </a>
+            </div>
+
+            <div class="exp-document-title">
+                <h1 class="exp-document-title-heading scroll-original-h2 scroll-custom-section-heading scroll-document-section-heading scroll-h1 scroll-relative-h1" data-scroll-heading-rank="1" data-scroll-original-heading-rank="2" data-scroll-relative-heading-rank="1" id="no-src_generated-id-05fc576c9416d7274f26a9c4080a7a5212f55040edba033e236679a0f512e229"><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">
+                    <a href="Corporater-Developer-Documentation.392528899.html">
+                        Corporater Developer Documentation
+                    </a>
+                </span></h1>
+            </div>
+
+<div class="exp-search-container">
+    <input type="search" id="search-textbox" autocomplete="off" class="exp-search-input" style="margin-right: 0;">
+    <div class="exp-search-input-icon">
+        <svg data-exp-id="magnifier-icon" data-exp-component="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M8.99452 14.5C10.5121 14.5 11.809 13.9669 12.8854 12.9007C13.9618 11.8345 14.5 10.5361 14.5 9.00548C14.5 7.48794 13.9631 6.19097 12.8893 5.11458C11.8155 4.03819 10.519 3.5 9 3.5C7.46786 3.5 6.16816 4.0369 5.1009 5.11071C4.03363 6.18453 3.5 7.48096 3.5 9C3.5 10.5321 4.0331 11.8318 5.09929 12.8991C6.1655 13.9664 7.46391 14.5 8.99452 14.5ZM9 16C8.02913 16 7.11974 15.816 6.27185 15.4479C5.42395 15.0799 4.68056 14.5799 4.04167 13.9479C3.40278 13.316 2.90278 12.576 2.54167 11.728C2.18056 10.88 2 9.97053 2 8.99956C2 8.04152 2.18403 7.13542 2.55208 6.28125C2.92014 5.42708 3.41864 4.68387 4.04758 4.0516C4.67653 3.41935 5.41569 2.91935 6.26508 2.5516C7.11449 2.18387 8.02548 2 8.99806 2C9.95769 2 10.8646 2.18403 11.7188 2.55208C12.5729 2.92014 13.316 3.42014 13.9479 4.05208C14.5799 4.68403 15.0799 5.42612 15.4479 6.27835C15.816 7.13058 16 8.0381 16 9.00094C16 9.83365 15.8615 10.6213 15.5846 11.3638C15.3078 12.1062 14.9254 12.7836 14.4375 13.3958L18 16.9583L16.9375 18L13.375 14.4583C12.7668 14.9459 12.0939 15.3247 11.3564 15.5948C10.6188 15.8649 9.83333 16 9 16Z" fill="currentColor" />
+        </svg>
+    </div>
+    <div id="search-suggestion-container" class="exp-search-suggestion-panel" data-exp-component="search-suggestion"></div>
+    <template id="exp-search-suggestion-option-template">
+        <div class="exp-search-suggestion-option-container search-form-suggestion">
+            <a class="exp-search-suggestion-option search-form-suggestion" href=""></a>
+        </div>
+    </template>
+</div>
+
+
+            <nav class="exp-sidebar-navigation">
+                <div class="exp-sidebar-navigation-sticky-wrapper">
+                    <iframe src="toc.html?pageId=392365526" border="0"></iframe>
+                </div>
+
+            </nav>
+
+
+            <nav aria-label="Breadcrumb" class="exp-breadcrumbs-wrapper">
+                <ol class="breadcrumbs">
+                        <li class="breadcrumb">
+                            <a href="Corporater-Developer-Documentation.392528899.html" rel="prev" target="_self">Corporater Developer Documentation</a>
+                        </li>
+                        <li class="breadcrumb">
+                            <a href="Developer.392791120.html" rel="prev" target="_self">Developer</a>
+                        </li>
+                    <li class="breadcrumb active" aria-current="page">
+                        Setup
+                    </li>
+                </ol>
+            </nav>
+
+
+            <main class="exp-content">
+                <article role="article">
+
+                    <header>
+                        <h1 class="article-heading scroll-h1 scroll-original-h1 scroll-relative-h1 scroll-custom-section-heading scroll-document-section-heading" role="heading" data-scroll-heading-rank="1" data-scroll-original-heading-rank="1" data-scroll-relative-heading-rank="1" id="no-src_generated-id-497e315645da8075ed967c484c1650ab535edb0452753746991ca863da04af9c"><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">
+                            Setup
+                        </span></h1>
+                    </header>
+
+                    <section class="page" id="content" role="main">
+                        <div id="main-content" class="wiki-content article-content js-tocBot-content">
+                            <h2 id="Setup-Introduction" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="2" data-scroll-original-heading-rank="1" data-scroll-relative-heading-rank="2" class="scroll-original-h1 scroll-custom-section-heading scroll-document-section-heading scroll-h2 scroll-relative-h2"><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">Introduction</span></h2>
+<p>This document describes setting up a developer machine for BMP.</p>
+<p>There are two ways to set up development; local, and development container. The local setup is perhaps easier, and at least a little lighter on resources, while the development container setup makes it easier to have a uniform development environment across different machines.</p>
+<h2 id="Setup-Localdevelopmentsetup" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="2" data-scroll-original-heading-rank="1" data-scroll-relative-heading-rank="2" class="scroll-original-h1 scroll-custom-section-heading scroll-document-section-heading scroll-h2 scroll-relative-h2"><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">Local development setup</span></h2>
+<h3 id="Setup-Prerequisites" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="3" data-scroll-original-heading-rank="2" data-scroll-relative-heading-rank="3" class="scroll-original-h2 scroll-custom-section-heading scroll-document-section-heading scroll-h3 scroll-relative-h3"><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">Prerequisites</span></h3>
+<p>The BMP prerequisites are Java SE Development Kit (JDK) 17, Maven 3.6.3, and Node.JS 12.18.3 (with NPM 6.14.6). Check the current JDK and Maven versions in <a class="external-link scroll-external-link" href="https://github.com/corporater/docker.corporater/blob/master/Dockerfile" rel="nofollow" shape="rect" data-scroll-link-type="default" data-scroll-link-target="https://github.com/corporater/docker.corporater/blob/master/Dockerfile" data-scroll-link-local="false"><code>corporater/docker.corporater/Dockerfile</code></a> and the current Node.js and NPM versions in <a class="external-link scroll-external-link" href="https://github.com/corporater/bmp.bmp/blob/master/bmp-frontend/pom.xml" rel="nofollow" shape="rect" data-scroll-link-type="default" data-scroll-link-target="https://github.com/corporater/bmp.bmp/blob/master/bmp-frontend/pom.xml" data-scroll-link-local="false"><code>corporater/bmp.bmp/bmp-frontend/pom.xml</code></a>.</p>
+
+<strong>Linux</strong>
+
+This is valid for Ubuntu (21.04), but should work on any Debian-derived distro. It also assumes you you use zsh, but the changes needed for bash are trivial, and are left as an exercise for the reader.
+
+#### JDK
+
+
+<pre><code class="language-sh">$ apt update &amp;&amp; apt install openjdk-17-jdk
+$ java -version
+openjdk version "17.0.3" 2022-04-19
+OpenJDK Runtime Environment (build 17.0.3+7-Ubuntu-0ubuntu0.22.04.1)
+OpenJDK 64-Bit Server VM (build 17.0.3+7-Ubuntu-0ubuntu0.22.04.1, mixed mode, sharing)
+</code></pre>
+
+
+If the reported version is not 17, you probably need to update the default java version:
+
+
+<pre><code class="language-sh">$ sudo update-alternatives --config javac
+$ sudo update-alternatives --config java
+</code></pre>
+
+
+#### Maven
+
+There is no need to install Maven, as the Maven Wrapper will take care of that.
+
+#### Installing Node.js with `nvm` 🚀
+
+The best way to install Node.js is using a tool called `nvm` (Node Version Manager). `nvm` allows you to manage multiple Node.js versions, and it's designed to be installed per-user and invoked per-shell. It works on any POSIX-compliant shell (sh, dash, ksh, zsh, bash).
+
+📖 **Installation Guide**: [nvm install](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+After installing `nvm`, refer to [`bmp-frontend/pom.xml`](https://github.com/corporater/bmp.bmp/blob/master/bmp-frontend/pom.xml) to find the current Node.js version to install using `nvm`. It should be as simple as:
+
+
+<pre><code class="language-sh">$ nvm install 18.17
+$ nvm use 18
+$ node -v
+</code></pre>
+
+
+
+
+
+<strong>MacOS</strong>
+
+#### JDK
+
+
+<pre><code class="language-sh">$ brew install openjdk@17
+
+$ echo 'export JAVA_HOME="/usr/local/opt/openjdk@8"' &gt;&gt; ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/openjdk@17/bin:$PATH"' &gt;&gt; ~/.zshrc
+</code></pre>
+
+
+Reload `.zshrc` with `$ source ~/.zshrc` and make sure `$ java -version` outputs:
+
+
+<pre><code>openjdk version "1.17 xxxxxxx"
+OpenJDK Runtime Environment (build 17 xxxx)
+OpenJDK 64-Bit Server VM (build xxxxxxxx, mixed mode)
+</code></pre>
+
+
+if not, consult `$ brew info openjdk@17`, may need to symlink some stuff
+
+#### Maven
+
+There is no need to install Maven, as the Maven Wrapper will take care of that.
+
+#### Installing Node.js with `nvm` 🚀
+
+The best way to install Node.js is using a tool called `nvm` (Node Version Manager). `nvm` allows you to manage multiple Node.js versions, and it's designed to be installed per-user and invoked per-shell. It works on any POSIX-compliant shell (sh, dash, ksh, zsh, bash).
+
+📖 **Installation Guide**: [nvm install](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+After installing `nvm`, refer to [`bmp-frontend/pom.xml`](https://github.com/corporater/bmp.bmp/blob/master/bmp-frontend/pom.xml) to find the current Node.js version to install using `nvm`. It should be as simple as:
+
+
+<pre><code class="language-sh">$ nvm install 18.17
+$ nvm use 18
+$ node -v
+</code></pre>
+
+
+
+
+<strong>Windows</strong>
+
+The easiest way to install the prerequisites on Windows is with [Chocolatey](https://chocolatey.org).
+
+Install the following packages:
+- Java SE 17: [`https://community.chocolatey.org/packages/openjdk17`](https://chocolatey.org/packages/openjdk17)
+- Maven: There is no need to install Maven, as the Maven Wrapper will take care of that.
+
+#### Installing Node.js with `nvm` 🚀
+
+The best way to install Node.js is using a tool called `nvm` (Node Version Manager). `nvm` allows you to manage multiple Node.js versions, and it's designed to be installed per-user and invoked per-shell. It works on any POSIX-compliant shell (sh, dash, ksh, zsh, bash).
+
+📖 **Installation Guide**: [nvm install](https://github.com/coreybutler/nvm-windows)
+
+After installing `nvm`, refer to [`bmp-frontend/pom.xml`](https://github.com/corporater/bmp.bmp/blob/master/bmp-frontend/pom.xml) to find the current Node.js version to install using `nvm`. It should be as simple as:
+
+
+<pre><code class="language-sh">$ nvm install 18.17
+$ nvm use 18
+$ node -v
+</code></pre>
+
+
+
+<hr>
+<h3 id="Setup-Project" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="3" data-scroll-original-heading-rank="2" data-scroll-relative-heading-rank="3" class="scroll-original-h2 scroll-custom-section-heading scroll-document-section-heading scroll-h3 scroll-relative-h3"><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">Project</span></h3>
+<p>We assume that you have created a <code>corporater</code> directory somewhere which will contain your projects, and that your terminal is in this directory.</p>
+<h4 id="Setup-Clonetherepository" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="4" data-scroll-original-heading-rank="3" data-scroll-relative-heading-rank="4" class="scroll-original-h3 scroll-custom-section-heading scroll-document-section-heading scroll-h4 scroll-relative-h4"><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">Clone the repository</span></h4>
+<pre><code class="language-sh">$ git clone git@github.com:corporater/bmp.bmp.git
+$ cd bmp.bmp
+</code></pre>
+<p>You should be at the root of the cloned repository for the rest of the steps.</p>
+<h4 id="Setup-Setenvironmentvariables" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="4" data-scroll-original-heading-rank="3" data-scroll-relative-heading-rank="4" class="scroll-original-h3 scroll-custom-section-heading scroll-document-section-heading scroll-h4 scroll-relative-h4"><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">Set environment variables</span></h4>
+<p>Download the file <a class="external-link scroll-external-link" href="https://corporaterglobal.sharepoint.com/sites/CorporaterDevelopment/Delte%20dokumenter/devs/Dev%20environment%20setup/credentials.txt" rel="nofollow" shape="rect" data-scroll-link-type="default" data-scroll-link-target="https://corporaterglobal.sharepoint.com/sites/CorporaterDevelopment/Delte%20dokumenter/devs/Dev%20environment%20setup/credentials.txt" data-scroll-link-local="false"><code>credentials.txt</code></a>.</p>
+
+<strong>Linux and MacOS</strong>
+
+
+<pre><code class="language-sh">bash -c 'source credentials.txt &amp;&amp; for v in USR PSW TOKEN; do var="ARTIFACTORY_$v"; echo "export $var=${!var}"; done' | tee -a ~/.profile &gt;&gt; ~/.zshrc
+</code></pre>
+
+&gt; Note if using zsh replace .profile with .zprofile above
+
+&gt; It is important for IDEs to have access to these environment variables for a good developer experience. The GNOME display manager will source the `$HOME/.profile` file, so if we export environment variables in this file, any process started by GNOME (like IDEs), will inherit those variables.
+
+
+
+
+<strong>Windows</strong>
+
+In Windows, you need to set then environment variables from `credentials.txt` in the Windows Control Panel, System, Advanced system settings...
+
+
+<h4 id="Setup-Toolsettings" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="4" data-scroll-original-heading-rank="3" data-scroll-relative-heading-rank="4" class="scroll-original-h3 scroll-custom-section-heading scroll-document-section-heading scroll-h4 scroll-relative-h4"><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">Tool settings</span></h4>
+
+<strong>Linux and MacOS</strong>
+
+Copy `.circleci/settings.xml` to `.m2/` folder in home dir:
+
+
+<pre><code class="language-sh">$ mkdir ~/.m2
+$ cp .circleci/settings.xml ~/.m2
+</code></pre>
+
+
+
+
+<strong>Windows</strong>
+
+
+<pre><code class="language-pwsh">mkdir %userprofile%\.m2
+copy .circleci\settings.xml %userprofile%\.m2
+</code></pre>
+
+
+
+Note: After the introduction of pnpm, we've seen issues with using environment variable in npmrc file. If you see the error message "err_INVALID_CHAR Invalid character in header content ["authorization"]", try replacing the environment variable ${ARTIFACTORY_TOKEN} in npmrc file with the actual token.
+
+### Run maven install
+
+To validate your development environment, run
+
+
+<pre><code class="language-sh">$ mvn clean install -DskipTests
+</code></pre>
+
+
+
+---
+
+# Development container setup
+
+The main reason to use a development container is consistency. A development container will be the same no matter what machine it is running on, and will use the designated dependency versions, ensuring consistent builds and behavior. It is also a lot easier to set up a new development machine. The only prerequisite is docker. It also makes it easy to work on projects requiring different versions of the same dependency.
+
+## Prerequisites
+
+To use the development container, you will need to install docker. Follow the guides to [get docker](https://docs.docker.com/get-docker/) for your OS.
+
+Visual Studio Code is an optional dependency, but using VS Code with the [_Remote - Containers_](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) plugin makes the experience almost seamless. [Download](https://code.visualstudio.com/download) and [install](https://code.visualstudio.com/docs/setup/setup-overview) VS Code, then install (`Ctrl+Shift+X`) the _Remote - Containers_ plugin.
+
+### Windows
+
+To have a good experience using the development container on Windows, you will need to [install WSL](https://docs.microsoft.com/en-us/windows/wsl/install). Once installed, start a terminal running in WSL and follow along...
+
+## Project
+
+### Clone the repository
+
+We assume that you have created a `corporater` directory somewhere which will contain your projects, and that your terminal is in this directory.
+
+### Clone the repository
+
+
+<pre><code class="language-sh">$ git clone git@github.com:corporater/bmp.bmp.git
+$ cd bmp.bmp
+</code></pre>
+
+
+You should be at the root of the cloned repository for the rest of the steps.
+
+### Set environment variables
+
+Download the file [`credentials.txt`](https://corporaterglobal.sharepoint.com/sites/CorporaterDevelopment/Delte%20dokumenter/devs/Dev%20environment%20setup/credentials.txt), then execute the following command:
+
+
+<pre><code class="language-sh">$ bash -c 'source credentials.txt &amp;&amp; for v in USR PSW TOKEN; do var="ARTIFACTORY_$v"; echo "export $var=${!var}"; done' &gt;&gt; ~/.zshrc
+$ source ~/.zshrc
+</code></pre>
+
+
+If you're running in WSL on Windows in the default Ubuntu Linux distribution and the default shell, change `~/.zshrc` to `~/.bashrc`.
+
+### Use Visual Studio code with devcontainer
+
+Open VS Code on the root of your repository clone. Either
+- start VS Code, select _File -&gt; Open Folder..._ (`Ctrl+K Ctrl+O`) and select your directory, or
+- execute
+    ```sh
+    $ code .
+    ```
+  when standing in your project catalog.
+
+When VS Code opens on your project (and you _did_ install the _Remote - Containers_ plugin, didn't you?), you should get a notification _Reopen in container_ button in the lower right corner. Press the button, wait for docker to build the development container image and start it, and then VS Code will open on the project again. Only this time it will run inside the development container, only running the GUI client on the host machine.
+
+If you open the terminal (`` Ctrl+Shift+` `` or menu _Terminal -&gt; New Terminal_) you can run commands (like `mvn clean install`) inside the container.
+
+#### Windows
+
+Using VS Code with devcontainer in WSL on Windows is slightly more complicated. You will need to install the [_Remote - WSL_](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) plugin, then open VS Code in WSL (`Ctrl+Shift+P` then search for the _Remote-WSL: New Window_ command, or press the green remote icon in the lower left corner). In the new WSL window, you should be able to open your project and start the devcontainer.
+
+### Use terminal with devcontainer
+
+It is also possible to start the development container without using VS Code. There is a shell script in the `.devcontainer` folder that does the trick:
+
+
+<pre><code class="language-sh">$ ./.devcontainer/devcontainer.sh
+</code></pre>
+
+
+This will open a zsh in your development container.
+
+### Notes on the BMP devcontainer
+
+#### Caching
+
+The BMP devcontainer will cache maven and NPM downloads in the `.devcontainer/remote/m2` and `.devcontainer/remote/npm` directories. The zsh history file is also cached.
+
+If you run BMP in the container (see below), any corporater files will be cached in the `.devcontainer/remote/corporater` directory.
+
+#### Running BMP in devcontainer
+
+There are predefined VS Code launch configurations for _Control Center_, _Configuration Studio_, and _BMP Frontend_. There are also launch scripts that can be used from the terminal in the `.devcontainer/launch` directory.
+
+The _BMP Frontend_ launch configuration should be usable on any platform. The other launch configurations require a GUI, which is not available in the development container. If you are running on Linux, you can still run these programs, since the XServer socket has been mapped into the devcontainer, as is the `DISPLAY` environment variable. It should work out of the box. On MacOS and Windows, this will not work unless you are running a X Server, which is way out of scope for this documentation. But you should be able to run the programs from your host machine if you install java, by using the launcher scripts.
+
+---
+
+# Development
+
+## IDE Setup
+
+### IntelliJ
+
+Applications can be launched using existing run configurations. To customize a run configuration, make a copy of the original one and apply your changes.
+
+In the Maven plugin setup override `User settings file` location to where you put `settings.xml`.
+
+### Visual Studio Code
+
+See [How to setup Visual Studio Code development environment](How-to-setup-Visual-studio-Code-development-environment)
+
+
+### Application setup - Control Center
+- import one of the latest database files (e.g. `AllObjects.2021.03.09.12.09_v5.1.0.corpobackup`) (Download from [Teams](https://corporaterglobal.sharepoint.com/sites/CorporaterDevelopment/Delte%20dokumenter/Gryffindor/DBs/AllObjects.2021.03.09.12.09_v5.1.0.corpobackup) or [SharePoint](https://corporaterglobal.sharepoint.com/:u:/r/sites/CorporaterDevelopment/Delte%20dokumenter/Gryffindor/DBs/AllObjects.2021.03.09.12.09_v5.1.0.corpobackup?csf=1&amp;web=1&amp;e=DgOEmS))
+- workspaces - right click - add from backup, set name `default`, select the file
+- perform DB cleanup as described on [FAQ Troubleshooting](FAQ---Troubleshooting).
+- upgrade the DB
+
+
+### Build and run nodejs app
+- go to `C:\corporater\bmp.bmp\bmp-frontend`
+- run `npm install` (skip if you ran mvn clean install)
+- run `npm start`
+                        </div>
+                    </section>
+
+                </article>
+            </main>
+
+
+                <nav class="exp-post-navigation-prev">
+                    <a href="Readme-(Copy)-(Copy).392365507.html" class="post-navigation-link">
+                        <svg width="22px" height="22px" viewbox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <g id="ht-icon-prev">
+                                <path fill="currentColor" d="M16,8 L16,6 L6,6 L6,16 L8,16 L8,8 L16,8 Z" id="Rectangle-2" transform="translate(11.000000, 11.000000) rotate(-45.000000) translate(-11.000000, -11.000000) " />
+                            </g>
+                        </svg>
+                        <span>Readme (Copy) (Copy)</span>
+                    </a>
+                </nav>
+
+                <nav class="exp-post-navigation-next">
+
+                    <a href="Troubleshooting.392299179.html" class="post-navigation-link">
+                        <span>Troubleshooting</span>
+                        <svg width="22px" height="22px" viewbox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <g id="ht-icon-next">
+                                <path fill="currentColor" d="M16,8 L16,6 L6,6 L6,16 L8,16 L8,8 L16,8 Z" id="Rectangle-2" transform="translate(11.000000, 11.000000) rotate(-225.000000) translate(-11.000000, -11.000000) " />
+                            </g>
+                        </svg>
+                    </a>
+
+                </nav>
+
+
+            <nav class="exp-sidebar-toc js-tocBot">
+                <!-- content generated by toc.js  -->
+            </nav>
+
+            <div class="exp-sidebar-navigation-toggle">
+                <div class="exp-sidebar-navigation-toggle-icon-line"></div>
+                <div class="exp-sidebar-navigation-toggle-icon-line"></div>
+                <div class="exp-sidebar-navigation-toggle-icon-line"></div>
+            </div>
+
+            <div class="exp-scroll-to-top-container">
+                <a href="#Setup-top" class="exp-scroll-to-top-link">↑ Back to top</a>
+            </div>
+
+        </div>
+
+
+
+<dialog class="exp-lightbox-container" aria-modal="true">
+    <div class="lightbox-toolbar">
+        <button type="button" class="exp-lightbox-close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 -960 960 960" aria-hidden="true">
+                <path fill="currentColor" d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </button>
+    </div>
+    <div class="lightbox-content content">
+    </div>
+</dialog>
+
+<template id="exp-lightbox-wrapper-template">
+    <div class="exp-lightbox-wrapper">
+        <div class="exp-lightbox-toggle">
+            <button type="button" class="exp-lightbox-close">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 -960 960 960" aria-hidden="true">
+                    <path fill="currentColor" d="M120-120v-320h80v184l504-504H520v-80h320v320h-80v-184L256-200h184v80H120Z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</template>
+
+        <script src="js/tocbot.min.js"></script>
+        <script src="js/article-toc.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/mobile.js"></script>
+
+    </body>
+
+</html>

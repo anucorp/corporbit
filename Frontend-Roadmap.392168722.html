@@ -1,0 +1,262 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1">
+
+        <link rel="icon" href="_scroll_external/attachments/3de1052076b3/devdocs">
+
+        <!-- Primary Meta Tags -->
+        <meta name="exp-export-timestamp" content="2025-11-11T15:47:31.719+0530">
+        <meta name="exp-page-id" content="392168722">
+        <meta name="exp-page-title" content="Frontend Roadmap">
+        <meta name="exp-page-version" content="1">
+        <meta name="exp-page-scroll-page-id" content="">
+        <meta name="exp-page-created" content="2025-11-10T01:35:33.561+0530">
+        <meta name="exp-page-last-modified" content="2025-11-10T01:35:33.561+0530">
+        <meta name="exp-page-labels" content="">
+        <meta name="exp-page-context-keys" content="">
+        <meta name="exp-space-key" content="DEVDOCS">
+        <meta name="exp-space-title" content="Developer Documentation">
+
+        <!-- Additional Meta Tags -->
+        <meta name="exp-document-id" content="">
+        <meta name="exp-document-title" content="Corporater Developer Documentation">
+        <meta name="exp-version-status" content="">
+        <meta name="exp-version-id" content="">
+        <meta name="exp-version-name" content="">
+        <meta name="exp-version-description" content="">
+        <meta name="exp-version-date" content="">
+        <meta name="exp-variant-id" content="">
+        <meta name="exp-variant-name" content="">
+        <meta name="exp-variant-description" content="">
+        <meta name="exp-language-code" content="">
+        <meta name="exp-language-name" content="">
+
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/image-dimensions.css">
+
+
+            
+            
+<script src="js/search.js"></script>
+            <script id="search-worker" type="javascript/worker">
+    onmessage = function(event) {
+        // dispatch events to handling functions
+        var message = event.data;
+
+        if ((message.type === 'setup') && message.baseUrl) {
+            setup(message.baseUrl);
+        }
+
+        if (message.type === 'search-request') {
+            search(message.query);
+        }
+    }
+
+    var searchIndex;
+
+    function setup(baseUrl) {
+        importScripts(
+            baseUrl + 'js/lunr.js',
+            baseUrl + 'js/lunr-index.js',
+            baseUrl + 'js/lunr-data.js'
+        );
+        try {
+            // load lunr-extras if it exists, which contains language-specific files for languages other than english
+            importScripts(baseUrl + 'js/lunr-extras.js');
+        } catch (e) {}
+        searchIndex = lunr.Index.load(lunrIndex);
+    }
+
+    function search(query) {
+        var searchHits = searchIndex.search(query);
+        var results = searchHits.map(function (result) {
+            return lunrData.filter(function (d) {
+                return d.id === result.ref;
+            })[0]
+        });
+        postMessage({ type: 'search-results', results: results, query: query });
+    }
+</script>
+        <title>Frontend Roadmap</title>
+
+    <meta name="generator" content="Scroll HTML Exporter / K15t GmbH"><meta name="exp-content-hash" content="947e6619e1c7e2c6513dbe476ed3c7a71441853a9f95bdbc750e9791a8d89110"></head>
+
+    <body id="FrontendRoadmap-top" data-pageid="392168722" data-confluence-editor-version="v2" data-confluence-deployment-type="CLOUD">
+
+        <div class="exp-grid-container">
+
+            <header class="exp-header"></header>
+
+            <div class="exp-logo">
+                <a href="Corporater-Developer-Documentation.392528899.html">
+                    <span class="exp-logo-image" style="background-image: url(_scroll_external/attachments/3de1052076b3/devdocs)" alt="Developer Documentation" title="Developer Documentation"></span>
+                </a>
+            </div>
+
+            <div class="exp-document-title">
+                <h1 class="exp-document-title-heading scroll-original-h2 scroll-custom-section-heading scroll-document-section-heading scroll-h1 scroll-relative-h1" data-scroll-heading-rank="1" data-scroll-original-heading-rank="2" data-scroll-relative-heading-rank="1" id="no-src_generated-id-2019ad18a8b058e6bbd78e96693c956c38ca8c6024e7651b3043a6084a9d997c"><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">
+                    <a href="Corporater-Developer-Documentation.392528899.html">
+                        Corporater Developer Documentation
+                    </a>
+                </span></h1>
+            </div>
+
+<div class="exp-search-container">
+    <input type="search" id="search-textbox" autocomplete="off" class="exp-search-input" style="margin-right: 0;">
+    <div class="exp-search-input-icon">
+        <svg data-exp-id="magnifier-icon" data-exp-component="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M8.99452 14.5C10.5121 14.5 11.809 13.9669 12.8854 12.9007C13.9618 11.8345 14.5 10.5361 14.5 9.00548C14.5 7.48794 13.9631 6.19097 12.8893 5.11458C11.8155 4.03819 10.519 3.5 9 3.5C7.46786 3.5 6.16816 4.0369 5.1009 5.11071C4.03363 6.18453 3.5 7.48096 3.5 9C3.5 10.5321 4.0331 11.8318 5.09929 12.8991C6.1655 13.9664 7.46391 14.5 8.99452 14.5ZM9 16C8.02913 16 7.11974 15.816 6.27185 15.4479C5.42395 15.0799 4.68056 14.5799 4.04167 13.9479C3.40278 13.316 2.90278 12.576 2.54167 11.728C2.18056 10.88 2 9.97053 2 8.99956C2 8.04152 2.18403 7.13542 2.55208 6.28125C2.92014 5.42708 3.41864 4.68387 4.04758 4.0516C4.67653 3.41935 5.41569 2.91935 6.26508 2.5516C7.11449 2.18387 8.02548 2 8.99806 2C9.95769 2 10.8646 2.18403 11.7188 2.55208C12.5729 2.92014 13.316 3.42014 13.9479 4.05208C14.5799 4.68403 15.0799 5.42612 15.4479 6.27835C15.816 7.13058 16 8.0381 16 9.00094C16 9.83365 15.8615 10.6213 15.5846 11.3638C15.3078 12.1062 14.9254 12.7836 14.4375 13.3958L18 16.9583L16.9375 18L13.375 14.4583C12.7668 14.9459 12.0939 15.3247 11.3564 15.5948C10.6188 15.8649 9.83333 16 9 16Z" fill="currentColor" />
+        </svg>
+    </div>
+    <div id="search-suggestion-container" class="exp-search-suggestion-panel" data-exp-component="search-suggestion"></div>
+    <template id="exp-search-suggestion-option-template">
+        <div class="exp-search-suggestion-option-container search-form-suggestion">
+            <a class="exp-search-suggestion-option search-form-suggestion" href=""></a>
+        </div>
+    </template>
+</div>
+
+
+            <nav class="exp-sidebar-navigation">
+                <div class="exp-sidebar-navigation-sticky-wrapper">
+                    <iframe src="toc.html?pageId=392168722" border="0"></iframe>
+                </div>
+
+            </nav>
+
+
+            <nav aria-label="Breadcrumb" class="exp-breadcrumbs-wrapper">
+                <ol class="breadcrumbs">
+                        <li class="breadcrumb">
+                            <a href="Corporater-Developer-Documentation.392528899.html" rel="prev" target="_self">Corporater Developer Documentation</a>
+                        </li>
+                        <li class="breadcrumb">
+                            <a href="Teams.392299223.html" rel="prev" target="_self">Teams</a>
+                        </li>
+                        <li class="breadcrumb">
+                            <a href="Gryffindor.392299242.html" rel="prev" target="_self">Gryffindor</a>
+                        </li>
+                    <li class="breadcrumb active" aria-current="page">
+                        Frontend Roadmap
+                    </li>
+                </ol>
+            </nav>
+
+
+            <main class="exp-content">
+                <article role="article">
+
+                    <header>
+                        <h1 class="article-heading scroll-h1 scroll-original-h1 scroll-relative-h1 scroll-custom-section-heading scroll-document-section-heading" role="heading" data-scroll-heading-rank="1" data-scroll-original-heading-rank="1" data-scroll-relative-heading-rank="1" id="no-src_generated-id-602c397e87223d8e822984d7c6a828e2fee68c94f753f4fee2aaf6ca03725ac1"><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">
+                            Frontend Roadmap
+                        </span></h1>
+                    </header>
+
+                    <section class="page" id="content" role="main">
+                        <div id="main-content" class="wiki-content article-content js-tocBot-content">
+                            <h2 id="FrontendRoadmap-Corporaterfrontenddevelopmentroadmap" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="2" data-scroll-original-heading-rank="1" data-scroll-relative-heading-rank="2" class="scroll-original-h1 scroll-custom-section-heading scroll-document-section-heading scroll-h2 scroll-relative-h2"><span class="confluence-anchor-link" id="src-392168722_FrontendRoadmap-Corporater-frontend-development-roadmap"></span><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">Corporater frontend development roadmap</span></h2>
+<p>This document summarizes the current frontend state together with best practices and has been discussed with Gryffindor. Anyone is welcome to comment and contribute.</p>
+<h3 id="FrontendRoadmap-Currentstate" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="3" data-scroll-original-heading-rank="2" data-scroll-relative-heading-rank="3" class="scroll-original-h2 scroll-custom-section-heading scroll-document-section-heading scroll-h3 scroll-relative-h3"><span class="confluence-anchor-link" id="src-392168722_FrontendRoadmap-Current-state"></span><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">Current state</span></h3>
+<ul><li>We make use of Apollo GraphQL client.</li><li>We also use Redux to manage the global state.</li><li>For testing we have React and Enzyme.</li><li>To separate UI concerns we use HOCs and Recompose.</li><li>We use TypeScript.</li><li>We support browsers defined in <code>.browserslistrc</code>.</li></ul>
+<h3 id="FrontendRoadmap-Frontendchallenges" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="3" data-scroll-original-heading-rank="2" data-scroll-relative-heading-rank="3" class="scroll-original-h2 scroll-custom-section-heading scroll-document-section-heading scroll-h3 scroll-relative-h3"><span class="confluence-anchor-link" id="src-392168722_FrontendRoadmap-Frontend-challenges"></span><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">Frontend challenges</span></h3>
+<ul><li>The project structure drifted away from the original <a class="external-link scroll-external-link" href="https://www.taniarascia.com/react-architecture-directory-structure/" rel="nofollow" shape="rect" data-scroll-link-type="default" data-scroll-link-target="https://www.taniarascia.com/react-architecture-directory-structure/" data-scroll-link-local="false">model</a>.</li><li>Application context is overly complicated.</li><li>GraphQL is tailored to the frontend, not to the business model.</li><li>Lack of server to client communication. This leads to stale data displayed in UI after editing objects. Not urgent, but could open some new possibilities for users and developers.</li><li>Don't use setImmediate. This is deprecated and has worked only in node and IE11. IE11-specific code should be removed.</li><li>Remove dynamic mock. Use partial types.</li><li>Incomplete typings and hard to type HOCs.</li><li>Whitebox tests can be brittle and prevent us from refactoring.</li><li>Enzyme is losing popularity. And react-testing-library has become a new standard. It is present in the official create-react-app boilerplate.</li><li>HOCs are hard to type. It is not always intuitive. Recompose is hard to type and has been discontinued.</li></ul>
+<h3 id="FrontendRoadmap-Misc" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="3" data-scroll-original-heading-rank="2" data-scroll-relative-heading-rank="3" class="scroll-original-h2 scroll-custom-section-heading scroll-document-section-heading scroll-h3 scroll-relative-h3"><span class="confluence-anchor-link" id="src-392168722_FrontendRoadmap-Misc"></span><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">Misc</span></h3>
+<ul><li>Redux and React-Redux are globally mocked by default and return undefined in tests.</li><li>End to end tests don't use the development server by default in <code>cypress.json</code>.</li><li>Be aware how Apollo's cache keys are resolved in the code.</li><li>Creating Redux store has been changed recently.</li></ul>
+<h3 id="FrontendRoadmap-Adaptingforthefuture" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="3" data-scroll-original-heading-rank="2" data-scroll-relative-heading-rank="3" class="scroll-original-h2 scroll-custom-section-heading scroll-document-section-heading scroll-h3 scroll-relative-h3"><span class="confluence-anchor-link" id="src-392168722_FrontendRoadmap-Adapting-for-the-future"></span><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">Adapting for the future</span></h3>
+<h4 id="FrontendRoadmap-WarningsreportedbyESLintandReact" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="4" data-scroll-original-heading-rank="3" data-scroll-relative-heading-rank="4" class="scroll-original-h3 scroll-custom-section-heading scroll-document-section-heading scroll-h4 scroll-relative-h4"><span class="confluence-anchor-link" id="src-392168722_FrontendRoadmap-Warnings-reported-by-ESLint-and-React"></span><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">Warnings reported by ESLint and React</span></h4>
+<ul><li>Newly added ESLint reports many errors that should be fixed gradually.</li><li>We have the newest TS version, but we don't fully use all its capabilities. ESLint warns about untyped variables. <strong>Aim for 100% type coverage. Use inferred types inside modules and explicit types for module boundaries.</strong>. No need to explicitly type everything, TS can infer types for us.</li><li>Ensure React 17 forward compatibility by addressing React console errors.</li></ul>
+<h4 id="FrontendRoadmap-React" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="4" data-scroll-original-heading-rank="3" data-scroll-relative-heading-rank="4" class="scroll-original-h3 scroll-custom-section-heading scroll-document-section-heading scroll-h4 scroll-relative-h4"><span class="confluence-anchor-link" id="src-392168722_FrontendRoadmap-React"></span><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">React</span></h4>
+<ul><li>Avoid <a class="external-link scroll-external-link" href="https://kentcdodds.com/blog/prop-drilling" rel="nofollow" shape="rect" data-scroll-link-type="default" data-scroll-link-target="https://kentcdodds.com/blog/prop-drilling" data-scroll-link-local="false">prop drilling</a>. <strong>Use React Context and Hooks</strong>.</li><li>Once popular Recompose has been <a class="external-link scroll-external-link" href="https://github.com/acdlite/recompose" rel="nofollow" shape="rect" data-scroll-link-type="default" data-scroll-link-target="https://github.com/acdlite/recompose" data-scroll-link-local="false">deprecated</a> by the author in favor of hooks. <em>Replace HOCs with hooks</em>.</li><li>We are working towards upgrading to React 17.</li></ul>
+<h4 id="FrontendRoadmap-Testing" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="4" data-scroll-original-heading-rank="3" data-scroll-relative-heading-rank="4" class="scroll-original-h3 scroll-custom-section-heading scroll-document-section-heading scroll-h4 scroll-relative-h4"><span class="confluence-anchor-link" id="src-392168722_FrontendRoadmap-Testing"></span><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">Testing</span></h4>
+<ul><li>White box tests in Enzyme contain a lot of mocks and work on low level, which can make change difficult. <strong>Use testing-library to test the <a class="external-link scroll-external-link" href="https://testing-library.com/docs/guiding-principles" rel="nofollow" shape="rect" data-scroll-link-type="default" data-scroll-link-target="https://testing-library.com/docs/guiding-principles" data-scroll-link-local="false">usage</a>, not the structure.</strong></li><li>Testing async functionalities using enzyme is not robust. <strong>Use react-testing-library which should have better support for that.</strong></li></ul>
+<h4 id="FrontendRoadmap-GraphQL" data-scroll-heading-rank-offset="1" data-scroll-heading-rank="4" data-scroll-original-heading-rank="3" data-scroll-relative-heading-rank="4" class="scroll-original-h3 scroll-custom-section-heading scroll-document-section-heading scroll-h4 scroll-relative-h4"><span class="confluence-anchor-link" id="src-392168722_FrontendRoadmap-GraphQL"></span><span class="scroll-document-section-heading-counter" role="none"></span><span class="scroll-document-section-heading-text" role="none">GraphQL</span></h4>
+<ul><li>GraphQL is tailored to the frontend, not to the business model. This makes the number of fetchers grow proportionately to the UI components and limits reusability. <strong>Write GraphQL to model the domain, not the UI</strong>.</li><li>Mocking GraphQL is difficult. <strong>Use some recipes to simplify that: [[React Testing Library and Apollo]]. <a class="external-link scroll-external-link" href="https://mswjs.io/docs/getting-started/mocks/graphql-api" rel="nofollow" shape="rect" data-scroll-link-type="default" data-scroll-link-target="https://mswjs.io/docs/getting-started/mocks/graphql-api" data-scroll-link-local="false">Try mocking at the service worker level</a>.</strong></li><li>Dynamic mock is not needed when types are applied correctly. <strong>Remove dynamic mock</strong>.</li><li><strong>Use ramda instead of lodash</strong>. It is similar, but has functional programming capabilities. We would like to remove lodash from <code>package.json</code>.</li></ul>
+                        </div>
+                    </section>
+
+                </article>
+            </main>
+
+
+                <nav class="exp-post-navigation-prev">
+                    <a href="Gryffindor.392299242.html" class="post-navigation-link">
+                        <svg width="22px" height="22px" viewbox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <g id="ht-icon-prev">
+                                <path fill="currentColor" d="M16,8 L16,6 L6,6 L6,16 L8,16 L8,8 L16,8 Z" id="Rectangle-2" transform="translate(11.000000, 11.000000) rotate(-45.000000) translate(-11.000000, -11.000000) " />
+                            </g>
+                        </svg>
+                        <span>Gryffindor</span>
+                    </a>
+                </nav>
+
+                <nav class="exp-post-navigation-next">
+
+                    <a href="Guidelines.391972775.html" class="post-navigation-link">
+                        <span>Guidelines</span>
+                        <svg width="22px" height="22px" viewbox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <g id="ht-icon-next">
+                                <path fill="currentColor" d="M16,8 L16,6 L6,6 L6,16 L8,16 L8,8 L16,8 Z" id="Rectangle-2" transform="translate(11.000000, 11.000000) rotate(-225.000000) translate(-11.000000, -11.000000) " />
+                            </g>
+                        </svg>
+                    </a>
+
+                </nav>
+
+
+            <nav class="exp-sidebar-toc js-tocBot">
+                <!-- content generated by toc.js  -->
+            </nav>
+
+            <div class="exp-sidebar-navigation-toggle">
+                <div class="exp-sidebar-navigation-toggle-icon-line"></div>
+                <div class="exp-sidebar-navigation-toggle-icon-line"></div>
+                <div class="exp-sidebar-navigation-toggle-icon-line"></div>
+            </div>
+
+            <div class="exp-scroll-to-top-container">
+                <a href="#FrontendRoadmap-top" class="exp-scroll-to-top-link">↑ Back to top</a>
+            </div>
+
+        </div>
+
+
+
+<dialog class="exp-lightbox-container" aria-modal="true">
+    <div class="lightbox-toolbar">
+        <button type="button" class="exp-lightbox-close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 -960 960 960" aria-hidden="true">
+                <path fill="currentColor" d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </button>
+    </div>
+    <div class="lightbox-content content">
+    </div>
+</dialog>
+
+<template id="exp-lightbox-wrapper-template">
+    <div class="exp-lightbox-wrapper">
+        <div class="exp-lightbox-toggle">
+            <button type="button" class="exp-lightbox-close">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 -960 960 960" aria-hidden="true">
+                    <path fill="currentColor" d="M120-120v-320h80v184l504-504H520v-80h320v320h-80v-184L256-200h184v80H120Z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</template>
+
+        <script src="js/tocbot.min.js"></script>
+        <script src="js/article-toc.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/mobile.js"></script>
+
+    </body>
+
+</html>
